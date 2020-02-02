@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.biomanuel97.basmebook.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="400"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_customer"
+        android:icon="@drawable/ic_people_white_24dp"
+        android:orderInCategory="100"
+        android:title="@string/action_title_customers"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_all"
+        android:icon="@drawable/ic_all_inclusive_white_24dp"
+        android:orderInCategory="200"
+        android:title="@string/action_all"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_recent"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:orderInCategory="200"
+        android:title="@string/action_recent"
+        android:visible="false"
+        app:showAsAction="ifRoom"
+        />
+</menu>
