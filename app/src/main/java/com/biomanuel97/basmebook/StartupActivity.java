@@ -56,7 +56,7 @@ public class StartupActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CODE_PERMISSION_READ_CONTACTS) {
-            // TODO: Write Code load messages here too
+            // Write Code load messages here too
             mManager.loadSMS(this.getApplicationContext());
         } else {
             Toast.makeText(this, "Please grant permission", Toast.LENGTH_SHORT).show();

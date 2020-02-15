@@ -23,6 +23,7 @@ class UtilManager {
     private SQLiteDatabase mReadableDb, mWritableDb;
     private DatabaseDataWorker mDbDataWorker;
     private int generatedCustomerNameCount = 0;
+    private long LastTransactionTime = 0;
 
     private UtilManager() {
 
@@ -180,7 +181,22 @@ class UtilManager {
 
     /** <p> This method is for creating new transactions at runtime</p> */
     void newTransaction(String phone, String alias, String dataQuantity, boolean paid){
-        Transaction transaction = new Transaction(phone, alias, dataQuantity, (new Date()).getTime());
+        long time = new Date().getTime();
+        LastTransactionTime = time;
+        Transaction transaction = new Transaction(phone, alias, dataQuantity, time);
+        transaction.setPaid(paid);
+        if(!setCustomer(transaction)) mDbDataWorker.insertCustomer(transaction.getCustomer());
+
+        // insert into database
+        long id = mDbDataWorker.insertTransaction(transaction);
+        transaction.setId(id);
+        // register to memory
+        mTransactions.add(transaction);
+    }
+    /** <p> This method is for loading new transactions from SMS at runtime</p> */
+    void newTransaction(String phone, String alias, String dataQuantity, long timeStamp, boolean paid){
+        LastTransactionTime = timeStamp;
+        Transaction transaction = new Transaction(phone, alias, dataQuantity, timeStamp);
         transaction.setPaid(paid);
         if(!setCustomer(transaction)) mDbDataWorker.insertCustomer(transaction.getCustomer());
 
@@ -193,6 +209,7 @@ class UtilManager {
 
     void registerTransaction(String phone, String alias, String dataQuantity, long timeStamp, boolean paid, long id){
         // This method is for loading from SMS or database to memory
+        LastTransactionTime = timeStamp;
         Transaction transaction = new Transaction(phone, alias, dataQuantity, timeStamp, id);
         transaction.setPaid(paid);
         setCustomer(transaction);
@@ -201,6 +218,7 @@ class UtilManager {
 
     /** This method is for loading from <b>SMS to Memory</b> */
     void registerTransaction(String phone, String alias, String dataQuantity, long timeStamp, boolean paid){
+        LastTransactionTime = timeStamp;
         Transaction transaction = new Transaction(phone, alias, dataQuantity, timeStamp);
         transaction.setPaid(paid);
         setCustomer(transaction);
@@ -209,6 +227,7 @@ class UtilManager {
 
     /** This overload is only for <b>generating sample</b> transactions */
     private void newTransaction(String phone, String alias, String dataQuantity, long timeStamp) {
+        LastTransactionTime = timeStamp;
         Transaction transaction = new Transaction(phone, alias, dataQuantity, timeStamp, mTransactions.size());
         setCustomer(transaction);
         mTransactions.add(transaction);
@@ -374,6 +393,10 @@ class UtilManager {
         setContext(context);
         SMSDataWorker.loadSMSTransactions(context);
         ourInstance.setupDbs(context);
+    }
+
+    void syncSMS(Context context){
+        SMSDataWorker.syncSMSTransactions(context, LastTransactionTime);
     }
 
     private void loadFromDatabase(){

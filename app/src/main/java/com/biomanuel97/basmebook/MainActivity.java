@@ -51,17 +51,6 @@ public class MainActivity extends AppCompatActivity {
     //endregion Declaration
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        UtilManager.closeDb();
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
 
@@ -83,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setupToolbar();
 
+        getLifecycle().addObserver(new MainActivityObserver());
         mDialogHelper = new DialogHelper(this);
 
         mAllTransactionsListFragment = TransactionListFragment
@@ -211,9 +201,16 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_customer) {
             goToCustomerActivity();
             return true;
+        }else if(id == R.id.action_sync_sms){
+            return syncSms();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean syncSms() {
+        mManager.syncSMS(this);
+        return true;
     }
 
     private void goToCustomerActivity() {
