@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    >
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:autofillHints="@string/txt_phone_number"
+        android:hint="@string/hint_phone_number_entry"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/et_alias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_customer_alias_entry"
+        android:autofillHints="@string/customer_alias"
+        />
+
+    <Button
+        android:id="@+id/btn_register_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_register"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:background="@drawable/submit_btn_bg"
+        android:textColor="@android:color/white"
+        />
+</LinearLayout>

@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">BA SME Book</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_submit">Submit</string>
+    <string name="txt_alias">A. K. A</string>
+    <string name="txt_serial_number">01</string>
+    <string name="txt_phone_number">080123456789</string>
+    <string name="txt_data_quantity">1 GB</string>
+    <string name="txt_transaction_time">2 : 45 pm</string>
+    <string name="customer_alias">Customer</string>
+    <string name="hint_etphone">08109372879</string>
+    <string name="txt_paid">Paid?</string>
+    <string name="action_all">ALL</string>
+    <string name="action_recent">Recent</string>
+    <string name="txt_unpaid">Unpaid</string>
+
+    <string name="new_transaction">New Transaction</string>
+    <string name="record_transaction">Record Transaction</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="desc_delete_transaction_btn">Delete Transaction</string>
+    <string name="no_transactions_to_display">No Transactions to Display</string>
+    <string name="no_recent_transactions">No Recent Transactions</string>
+    <string name="paid_checkbox_label">Paid</string>
+    <string name="alias_label">Alias:</string>
+    <string name="phone_label">Phone:</string>
+    <string name="data_label">Data:</string>
+    <string name="edit_customer_content_description">Edit Customer</string>
+    <string name="FTT_label">F. T. T:</string>
+    <string name="first_transaction_date">1st Jan 2016</string>
+    <string name="monthly_agg">50 GB</string>
+    <string name="monthly_agg_empty">_ _</string>
+    <string name="MA_label">M. A.:</string>
+    <string name="title_activity_customer">Customers</string>
+    <string name="action_title_customers">Customers</string>
+    <string name="month_s_aggregate">Month\'s Aggregate</string>
+    <string name="this_month">This Month</string>
+    <string name="this_week">This Week</string>
+    <string name="week_s_aggregate">Week\'s Aggregate</string>
+    <string name="action_title_transactions">Transactions</string>
+    <string name="action_transactions_content_description">Go to Transactions List</string>
+    <string name="scroll_to_bottom">Scroll to Bottom</string>
+    <string name="scroll_to_top">Scroll to Top</string>
+    <string name="btn_save">SAVE</string>
+
+    <string name="title_activity_startup">StartupActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="hint_phone_number_entry">Enter Phone Number</string>
+    <string name="hint_customer_alias_entry">Enter Customer Name or Alias</string>
+    <string name="btn_register">Register</string>
+    <string name="desc_register_new_customer">Register New Customer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desc_copy_transaction_btn">Copy Transaction</string>
+</resources>

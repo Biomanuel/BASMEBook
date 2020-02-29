@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Theme Colors-->
+    <color name="colorPrimary">#0085FF</color>
+    <color name="colorPrimaryDark">#005ABB</color>
+    <color name="colorAccent">#FF9B40</color>
+    <!--endregion Theme Colors-->
+
+    <color name="paid_transaction_card_color">#FFFFFF</color>
+    <color name="unpaid_transaction_card_color">#ABFF9990</color>
+    <color name="default_transaction_phone_text_color">#005ABB</color>
+    <color name="default_transaction_alias_text_color">#222222</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

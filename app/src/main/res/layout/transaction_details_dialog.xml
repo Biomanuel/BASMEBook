@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:contentPadding="4dp"
+        tools:context=".MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:foregroundGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txt_data_value_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data_label"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/txt_customer_subheading"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_data_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_data_quantity"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintTop_toTopOf="@id/txt_data_value_label"
+                    app:layout_constraintStart_toEndOf="@id/txt_data_value_label"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_customer_subheading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customer_alias"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_data_value_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_phone_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone_label"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_customer_subheading"
+                    app:layout_constraintStart_toStartOf="@id/txt_customer_subheading"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_phone_number"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintTop_toTopOf="@id/txt_phone_label"
+                    app:layout_constraintStart_toEndOf="@id/txt_phone_label"
+                    />
+                <TextView
+                    android:id="@+id/txt_alias_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alias_label"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_phone_label"
+                    app:layout_constraintStart_toStartOf="@id/txt_customer_subheading"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_alias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customer_alias"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintTop_toTopOf="@id/txt_alias_label"
+                    app:layout_constraintStart_toEndOf="@id/txt_alias_label"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/paid_checkbox_label"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_alias_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingEnd="6dp"
+                    android:paddingStart="4dp"
+                    android:layout_marginEnd="16dp"
+                    />
+
+                <CheckBox
+                    android:id="@+id/paid_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:layout_constraintStart_toEndOf="@id/txt_paid"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_paid"
+                    app:layout_constraintTop_toTopOf="@id/txt_paid"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageButton
+                android:id="@+id/btn_copy_transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_content_copy_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/desc_copy_transaction_btn"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_delete_transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="6dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/desc_delete_transaction_btn"
+                android:tint="#333333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delete_black" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
